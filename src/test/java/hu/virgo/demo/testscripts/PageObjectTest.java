@@ -1,13 +1,12 @@
 package hu.virgo.demo.testscripts;
 
+import hu.virgo.demo.pages.ProblematicPage;
 import hu.virgo.selenium.framework.JUnitTestTemplate;
 import hu.virgo.selenium.framework.page.verify.PageVerificationException;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import selenium.framework.PageTest.ProblematicPage;
 
 public class PageObjectTest extends JUnitTestTemplate {
 
@@ -20,7 +19,6 @@ public class PageObjectTest extends JUnitTestTemplate {
 	@Test
 	public void initPage() {
 		driver.get(context.sut.getBaseUrl());
-
 		exception.expect(PageVerificationException.class);
 		utils.initPage(ProblematicPage.class);
 	}
